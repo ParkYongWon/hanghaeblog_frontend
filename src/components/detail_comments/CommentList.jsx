@@ -13,12 +13,12 @@ const CommentList = () => {
   const { id } = useParams();
 
   const comments = useSelector((state) => state.commentSlice.comments);
-  console.log(comments);
+  //console.log(comments);
 
   const [isEdit, setIsEdit] = useState(false);
   const [newDesc, setnewDesc] = useState(comments);
 
-  console.log(newDesc);
+  //console.log(newDesc);
 
   useEffect(() => {
     dispatch(getComments(parseInt(id)));

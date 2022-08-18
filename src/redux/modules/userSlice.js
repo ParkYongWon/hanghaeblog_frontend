@@ -35,7 +35,7 @@ const userSlice = createSlice({
     //   state.userInfo = null;
     //   state.userToken = null;
     //   state.error = null;
-    //   // console.log(typeof userInfo);
+    //   // //console.log(typeof userInfo);
     // },
     loader: (state, action) => {
       state.userInfo = action.payload;
@@ -51,12 +51,12 @@ const userSlice = createSlice({
       state.loading = false;
       state.userInfo = payload;
       state.userToken = payload.userToken;
-      // console.log(payload);
+      // //console.log(payload);
     },
     [userLogin.rejected]: (state, { payload }) => {
       state.loading = false;
       state.error = payload;
-      // console.log(payload);
+      // //console.log(payload);
     },
     // register user
     [registerUser.pending]: (state) => {

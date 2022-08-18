@@ -39,7 +39,7 @@ const ContentAddForm = () => {
     setContent({ imageUrl: "", title: "", text: "" });
   };
 
-  console.log(content);
+  //console.log(content);
   return (
     <StContentAddBox>
       <form>

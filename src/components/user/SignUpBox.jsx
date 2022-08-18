@@ -24,10 +24,10 @@ const SignUpBox = () => {
   useEffect(() => {
     // redirect authenticated user to home
     if (userInfo) navigate("/");
-    console.log(userInfo);
+    //console.log(userInfo);
     // redirect user to login page if registration was successful
     if (success) navigate("/login");
-    console.log(success);
+    //console.log(success);
   }, [navigate, userInfo, success]);
 
   const submitForm = (data) => {

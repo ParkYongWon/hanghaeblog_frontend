@@ -65,7 +65,7 @@ export const userLogin = createAsyncThunk(
         { loginId, password },
         config
       );
-      // console.log(response);
+      // //console.log(response);
       if (response.data.success === false) {
         window.alert(response.data.error.message);
         return thunkAPI.rejectWithValue();
@@ -74,7 +74,7 @@ export const userLogin = createAsyncThunk(
         localStorage.setItem("userToken", response.headers.authorization);
         localStorage.setItem("loginId", response.data.data.loginId);
         localStorage.setItem("refreshToken", response.headers.refreshtoken);
-        // console.log(response);
+        // //console.log(response);
         window.alert("로그인 성공");
         return thunkAPI.fulfillWithValue(response);
       }

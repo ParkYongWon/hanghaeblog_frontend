@@ -10,7 +10,7 @@ const ContentDetailContainer = () => {
   const dispatch = useDispatch();
 
   const content = useSelector((state) => state.contentSlice.singleContent);
-  // console.log(content.author);
+  // //console.log(content.author);
 
   const { id } = useParams();
 
@@ -74,7 +74,7 @@ const ContentDetailContainer = () => {
     }
   };
 
-  // console.log(newBody);
+  // //console.log(newBody);
 
   return (
     <>

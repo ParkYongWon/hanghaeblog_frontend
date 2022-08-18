@@ -10,7 +10,7 @@ const ContentCard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const contents = useSelector((state) => state.contentSlice.list.data);
-  console.log(contents);
+  //console.log(contents);
 
   useEffect(() => {
     dispatch(getContent());

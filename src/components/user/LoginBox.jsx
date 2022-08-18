@@ -12,7 +12,7 @@ import Kakao from "./Kakao";
 
 const LoginBox = () => {
   const { loading, userInfo, error } = useSelector((state) => state.user);
-  // console.log(error);
+  // //console.log(error);
 
   const dispatch = useDispatch();
 

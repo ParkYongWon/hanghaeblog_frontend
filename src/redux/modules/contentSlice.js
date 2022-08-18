@@ -32,7 +32,7 @@ export const getContent = createAsyncThunk(
   async (extr, thunkAPI) => {
     try {
       const { data } = await axios.get(contentServer);
-      console.log(data);
+      //console.log(data);
       // return thunkAPI.fulfillWithValue(data.data);
       return thunkAPI.fulfillWithValue(data);
     } catch (e) {
@@ -46,8 +46,8 @@ export const postContent = createAsyncThunk(
   async (args, thunkAPI) => {
     try {
       const response = await axios.post(contentServer, args, config);
-      console.log(response.data.data);
-      // console.log("여기까지오냐?");
+      //console.log(response.data.data);
+      // //console.log("여기까지오냐?");
       return thunkAPI.fulfillWithValue(response.data.data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
@@ -61,8 +61,8 @@ export const deleteContent = createAsyncThunk(
     try {
       const response = await axios.delete(contentServer + `/${arg}`, config);
       const deletedRes = await axios.get(contentServer, config);
-      console.log(response);
-      console.log(deletedRes);
+      //console.log(response);
+      //console.log(deletedRes);
       return thunkAPI.fulfillWithValue(deletedRes.data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -73,7 +73,7 @@ export const deleteContent = createAsyncThunk(
 export const updateContent = createAsyncThunk(
   "content/updateContent",
   async (arg, thunkAPI) => {
-    console.log(arg);
+    //console.log(arg);
     try {
       const id = arg.id;
       const { title, text } = { ...arg };
@@ -85,11 +85,11 @@ export const updateContent = createAsyncThunk(
         },
         config
       );
-      console.log(response);
-      console.log(response.data);
+      //console.log(response);
+      //console.log(response.data);
       return thunkAPI.fulfillWithValue(response.data.data);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       return thunkAPI.rejectWithValue(error.code);
     }
   }
@@ -99,7 +99,7 @@ export const getSingleContent = createAsyncThunk(
   "content/getSingleContent",
   async (args, thunkAPI) => {
     try {
-      // console.log("args:", args);
+      // //console.log("args:", args);
       // const targetId = args.id;
       const response = await axios.get(contentServer + `/${args}`);
       return thunkAPI.fulfillWithValue(response.data.data);
@@ -120,7 +120,7 @@ export const contentSlice = createSlice({
     [getContent.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.list = action.payload;
-      console.log(action.payload);
+      //console.log(action.payload);
     },
     [getContent.rejected]: (state, action) => {
       state.isLoading = false;
@@ -130,9 +130,9 @@ export const contentSlice = createSlice({
       state.isLoading = true;
     },
     [postContent.fulfilled]: (state, action) => {
-      // console.log("여기까지오냐?");
-      console.log(action.payload);
-      console.log(state.list);
+      // //console.log("여기까지오냐?");
+      //console.log(action.payload);
+      //console.log(state.list);
       // state.list.push(...action.payload);
       state.list = [{ ...state.list, ...action.payload }];
     },
@@ -156,7 +156,7 @@ export const contentSlice = createSlice({
     },
     [updateContent.fulfilled]: (state, action) => {
       state.isLoading = false;
-      console.log(action.payload);
+      //console.log(action.payload);
       state.singleContent = action.payload;
     },
     [updateContent.rejected]: (state, action) => {

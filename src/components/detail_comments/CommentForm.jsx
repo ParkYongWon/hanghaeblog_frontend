@@ -12,7 +12,7 @@ const CommentForm = () => {
 
   const [comment, setComment] = useState("");
 
-  console.log(comment);
+  //console.log(comment);
 
   const onChangeHandler = (event) => {
     if (comment.commentText === "") {

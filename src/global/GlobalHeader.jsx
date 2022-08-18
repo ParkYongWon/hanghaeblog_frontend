@@ -11,7 +11,7 @@ const GlobalHeadder = ({ children }) => {
   const logoutServer = process.env.REACT_APP_LOGOUT;
 
   const { userInfo } = useSelector((state) => state.user);
-  // console.log(userInfo);
+  // //console.log(userInfo);
 
   const loginId = localStorage.getItem("loginId");
 
